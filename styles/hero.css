@@ -1,13 +1,13 @@
 .hero {
-  /* max-width: 22.5rem; */
-  max-width: 40rem; 
+  max-width: 22.5rem;
+  /* max-width: 40rem;  */
   width: 100%;
   padding: 2rem 1.5rem;
   margin-inline: auto;
 
-  /* & h1 {
-    max-width: 22.5rem;
-  } */
+  & h1 {
+    max-width: 19.5rem;
+  }
 
   & h1 div {
     display: inline-block;
@@ -37,6 +37,49 @@
   & h1 span {
     display: block;
     animation: slideUp 6s infinite ease;
+  }
+
+  /* buttons */
+  & .buttons {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1.5rem;
+    margin-top: 3rem;
+
+    & .button {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+
+      border-radius: 5rem;
+
+      transition: scale 350ms;
+      
+      &.buy {
+        padding: 1.5rem 3rem;
+        background-color: var(--snitap-sun);
+      }
+
+      &.play span {
+        display: flex;
+        padding: 1.5rem;
+        border-radius: 50%;
+        background-color: white;
+      }
+
+      &:hover {
+        scale: 1.1;
+      }
+    }
+
+    & .shadow {
+      box-shadow: 
+      0 2px 5px rgb(0 0 0 / .1),
+      0 9px 9px rgb(0 0 0 / .09),
+      0 20px 12px rgb(0 0 0 / .05),
+      0 36px 15px rgb(0 0 0 / .01)
+      ;
+    }
   }
 }
 
@@ -124,6 +167,13 @@
 
     h1 div {
       height: 5rem;
+    }
+
+    /* buttons */
+    & .buttons {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
     }
   }
 
