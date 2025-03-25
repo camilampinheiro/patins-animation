@@ -1,6 +1,11 @@
 .hero {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  align-items: center; /* nao tenho certeza se precisa disso no mobile */
+  overflow: hidden;
+
   max-width: 22.5rem;
-  /* max-width: 40rem;  */
   width: 100%;
   padding: 2rem 1.5rem;
   margin-inline: auto;
@@ -36,7 +41,7 @@
 
   & h1 span {
     display: block;
-    animation: slideUp 6s infinite ease;
+    animation: slideUp 5s 2s infinite ease;
   }
 
   /* buttons */
@@ -80,6 +85,76 @@
       0 36px 15px rgb(0 0 0 / .01)
       ;
     }
+  }
+
+  /* patins */
+  & > div:nth-child(2) {
+    display: block;
+    width: 100%;
+    max-width: 19.5rem;
+    height: 19.5rem;
+
+    & .content {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    & img {
+      position: absolute;
+      width: 100%;
+    }
+
+    & img[src*="ellipse"] {
+      width: 94%;
+      top: 3%;
+      left: 3%;
+
+      transform: translateX(200%);
+      animation: slideIn 3s 200ms ease forwards;
+    }
+
+    & img[src*="patins"] {
+      z-index: 1;
+
+      transform: translateX(200%);
+      animation: slideIn 3s ease forwards;
+    }
+
+    & img[src*="stars-1"] {
+      max-width: 3.5rem;
+      top: 30%;
+      z-index: 0;
+
+      opacity: 0;
+      transform: translateX(400%);
+      animation: slideIn 3s 800ms ease forwards, appear 100ms 800ms forwards;
+    }
+
+    & img[src*="stars-2"] {
+      max-width: 1.5rem;
+      right: 0;
+      bottom: 35%;
+
+      transform: translateX(400%);
+      animation: slideIn 2.2s 800ms ease forwards;
+    }
+  }
+}
+
+@keyframes slideIn {
+  50% {
+    transform: translateX(-20px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
   }
 }
 
@@ -157,6 +232,7 @@
 
 @media (width >= 80em) {
   .hero {
+    flex-direction: row;
     max-width: 80rem;
     width: 100%;
     padding: 2.5rem 2rem;
@@ -174,6 +250,20 @@
       display: flex;
       flex-direction: row;
       gap: 2rem;
+    }
+
+    /* patins */
+    & > div:nth-child(2) {
+      max-width: 30.5rem;
+      height: 30.5rem;
+
+      & img[src*="stars-1"] {
+        max-width: 5.5rem;
+      }
+  
+      & img[src*="stars-2"] {
+        max-width: 2.5rem;
+      }
     }
   }
 
