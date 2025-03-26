@@ -1,4 +1,4 @@
-header {
+header.top {
   max-width: 22.5rem; /* colocar isso como comentario vai deixa o header na tela toda */
   width: 100%;
   padding: 1.25rem 1.5rem;
@@ -48,7 +48,7 @@ header {
 }
 
 @media (width >= 80em) {
-  header {
+  header.top {
     max-width: 80rem; /* colocar isso como comentario vai deixa o header na tela toda */
     padding: 1.25rem 2rem;
   }
